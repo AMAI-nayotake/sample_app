@@ -9,6 +9,7 @@ class ListsController < ApplicationController
     redirect_to '/top'
   end
   def index
+    @lists = List.all
   end
 
   def show
@@ -18,6 +19,6 @@ class ListsController < ApplicationController
   end
   private
   def list_params
-    params.require(:list).permit(:title, body)
+    params.require(:list).permit(:title, :body)
   end
 end
